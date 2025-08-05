@@ -92,4 +92,4 @@ public class Main {
 
         minDiff = Math.min(minDiff, Math.abs(groupASum - groupBSum));
     }
-}
+}    

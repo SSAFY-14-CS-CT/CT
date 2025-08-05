@@ -104,7 +104,7 @@ public class Main {
 			int x2 = rot[seq[i]][1]+rot[seq[i]][3];
 			int y2 = rot[seq[i]][2]+rot[seq[i]][3];
 			
-			while(x1 <= x2 && y2 <= y2 && x1 != x2 && y1 != y2) {
+			while(x1 <= x2 && y1 <= y2 && x1 != x2 && y1 != y2) {
 				Rotate(x1, y1, x2, y2);
 				x1++;
 				y1++;
