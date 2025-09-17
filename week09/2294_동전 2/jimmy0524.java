@@ -13,20 +13,21 @@ public class boj_2294 {
             coin[i] = Integer.parseInt(br.readLine());
         }
 
-        Arrays.fill(dp, Integer.MAX_VALUE);
+        int INF = 999999999;
+
+        Arrays.fill(dp, INF);
 
         dp[0] = 0;
 
         for (int i = 0; i < n; i++) {
             int c = coin[i];
+            if (c > k) continue;
             for (int j = c; j <= k; j++) {
-                if (dp[j - c] != Integer.MAX_VALUE && dp[j - c] + 1 < dp[j]) {
-                    dp[j] = dp[j - c] + 1;
-                }
+                dp[j] = Math.min(dp[j - c] + 1, dp[j]);
             }
         }
 
-        if (dp[k] == Integer.MAX_VALUE) {
+        if (dp[k] == INF) {
             System.out.println(-1);
         } else {
             System.out.println(dp[k]);
